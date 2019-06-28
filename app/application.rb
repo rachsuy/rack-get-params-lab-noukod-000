@@ -47,7 +47,6 @@
 # end
 
 
-
 class Application
 
   @@items = ["Apples","Carrots","Pears"]
@@ -71,7 +70,7 @@ class Application
         @@cart.each do |item|
           resp.write "#{item}\n"
         end
-
+      end
     elsif req.path.match(/add/)
       search_term = req.params["item"]
       if @@items.include?(search_term)
@@ -83,7 +82,6 @@ class Application
     else
       resp.write "Path Not Found"
     end
-
     resp.finish
   end
 
